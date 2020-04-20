@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  background-color: #05a6a6; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif; }
+
+.container {
+  position: relative;
+  height: 1vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 10vh 85vh 5vh;
+  grid-template-columns: 1fr 10fr 1fr; }
+
+header {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  height: 100%;
+  display: flex;
+  background-color: #025e73;
+  margin: 0;
+  padding: 1rem;
+  margin-bottom: 2rem; }
+
+main {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  grid-column: 1/4;
+  grid-row: 2/3;
+  margin: 0 auto;
+  align-self: center; }
+
+footer {
+  display: flex;
+  grid-column: 1/4;
+  grid-row: 3/4;
+  height: 100%;
+  background-color: #025e73; }
+  footer p {
+    display: block;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    color: white; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #025e73; }
+
+h1 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  align-self: center;
+  font-size: 2.3rem;
+  font-family: inherit; }
+
+a:link, a:visited, a:active {
+  color: white;
+  text-decoration: none; }
+
+textarea {
+  text-transform: uppercase;
+  font-size: 3rem; }
+
+.form {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5rem;
+  row-gap: 2rem; }
+  .form__input {
+    font-family: inherit;
+    display: block;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    border: 2px solid #037f8c;
+    width: 100%;
+    height: 100%;
+    color: #025e73; }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
+  .form__btn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 100%;
+    background-color: #e18453;
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    border: 2px solid #037f8c;
+    text-transform: uppercase;
+    align-self: baseline;
+    cursor: pointer; }
+    .form__btn:focus {
+      outline: none; }
