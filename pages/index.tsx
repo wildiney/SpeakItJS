@@ -7,9 +7,10 @@ import Button from '../components/Button/Button'
 
 function index() {
   const [language, setLanguage] = useState('pt-BR')
+  const [text, setText] = useState('')
 
   const init = () => {
-    if (!'speechSynthesis' in window) {
+    if (typeof speechSynthesis === 'undefined') {
       alert('Não é possível ativar o sistema de voz')
     } else {
       speak('')
@@ -27,27 +28,26 @@ function index() {
   }
 
   const speakThis = (speakAll = false) => {
-    let txt = txt_field.value.toLowerCase()
-    console.log(txt)
-    if (txt === '') {
+    if (text === '') {
       return
     }
 
     if (speakAll == true) {
-      speak(txt);
+      speak(text);
       return;
     }
-    if (txt.slice(-1) === ' ') {
-      let lastWord = txt.split(' ').slice(-2)
+    if (text.slice(-1) === ' ') {
+      let lastWord = text.split(' ').slice(-2)
       speak(lastWord)
     } else {
-      let lastChar = txt.slice(-1)
+      let lastChar = text.slice(-1)
       speak(lastChar)
     }
   }
 
   useEffect(() => {
     init();
+    speakThis()
   })
 
   return (
@@ -56,7 +56,7 @@ function index() {
         <title>Speak it</title>
       </Head>
       <Layout>
-        <TextArea keyupHandler={speakThis}></TextArea>
+        <TextArea keyupHandler={setText} textHandler={text}></TextArea>
         <Button clickHandler={speakThis}>Leia!</Button>
       </Layout>
     </>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header(): React.FC {
+function Header() {
     return (
         <header>
             <h1>Speak It</h1>

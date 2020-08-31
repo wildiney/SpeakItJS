@@ -1,8 +1,8 @@
 import React from 'react'
 
-function TextArea({ keyupHandler }) {
+function TextArea({ keyupHandler, textHandler }) {
     return (
-        <textarea onKeyUp={() => { keyupHandler() }} className="form__input" name="txt_field" id="txt_field"></textarea>
+        <textarea onKeyUp={(e) => { keyupHandler((e.target as HTMLTextAreaElement).value) }} value={textHandler} className="form__input" name="txt_field" id="txt_field"></textarea>
     )
 }
 
