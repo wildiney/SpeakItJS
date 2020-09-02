@@ -56,7 +56,7 @@ function index() {
         <title>Speak it</title>
       </Head>
       <Layout>
-        <TextArea keyupHandler={setText} textHandler={text}></TextArea>
+        <TextArea keyupHandler={setText} changeHandler={setText} textHandler={text}></TextArea>
         <Button clickHandler={speakThis}>Leia!</Button>
       </Layout>
     </>
