@@ -3,8 +3,8 @@ import React from 'react'
 function TextArea({ keyupHandler, textHandler, changeHandler }) {
     return (
         <textarea
-            onKeyUp={(e) => { keyupHandler((e.target as HTMLTextAreaElement).value) }}
-            onChange={(e) => { changeHandler((e.target as HTMLTextAreaElement).value) }}
+            onKeyUp={(e) => { keyupHandler(e) }}
+            onChange={(e) => { changeHandler(e) }}
             value={textHandler}
             className="form__input"
             name="txt_field"

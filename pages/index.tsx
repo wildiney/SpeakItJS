@@ -8,6 +8,7 @@ import Button from '../components/Button/Button'
 function index() {
   const [language, setLanguage] = useState('pt-BR')
   const [text, setText] = useState('')
+  let isDelete = false
 
   const init = () => {
     if (typeof speechSynthesis === 'undefined') {
@@ -32,10 +33,17 @@ function index() {
       return
     }
 
+    if (isDelete === true) {
+      isDelete = false
+      console.log("Erasing")
+      return
+    }
+
     if (speakAll == true) {
       speak(text);
       return;
     }
+
     if (text.slice(-1) === ' ') {
       let lastWord = text.split(' ').slice(-2)
       speak(lastWord)
@@ -45,9 +53,23 @@ function index() {
     }
   }
 
+  const keyupHandler = (e) => {
+    const textToRead = text
+
+    console.log(e.keyCode)
+    if (e.keyCode === 8) {
+      isDelete = true
+    }
+    speakThis(text)
+  }
+
+  const changeHandler = (e) => {
+    const text = (e.target as HTMLTextAreaElement).value.toLowerCase()
+    setText(text)
+  }
+
   useEffect(() => {
     init();
-    speakThis()
   })
 
   return (
@@ -56,7 +78,7 @@ function index() {
         <title>Speak it</title>
       </Head>
       <Layout>
-        <TextArea keyupHandler={setText} changeHandler={setText} textHandler={text}></TextArea>
+        <TextArea keyupHandler={keyupHandler} changeHandler={changeHandler} textHandler={text}></TextArea>
         <Button clickHandler={speakThis}>Leia!</Button>
       </Layout>
     </>
