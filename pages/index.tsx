@@ -9,7 +9,7 @@ function index () {
   const language = 'pt-BR'
   const [text, setText] = useState('')
   const [accent, setAccent] = useState('')
-  let isDelete = false
+  let isDelete: boolean = false
 
   const speak = (text) => {
     const synth = window.speechSynthesis
@@ -57,7 +57,6 @@ function index () {
   const keyupHandler = (e) => {
     const textToRead = text
 
-    console.log(e.keyCode)
     if (e.keyCode === 8) {
       isDelete = true
     }
