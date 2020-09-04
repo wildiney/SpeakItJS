@@ -4,10 +4,9 @@ import Head from 'next/head'
 import Layout from '../components/Layout/Layout'
 import TextArea from '../components/Textarea/TextArea'
 import Keyboard from '../components/Keyboard/Keyboard'
-import Button from '../components/Button/Button'
 
-function index() {
-  const [language, setLanguage] = useState('pt-BR')
+function index () {
+  const language = 'pt-BR'
   const [text, setText] = useState('')
   const [accent, setAccent] = useState('')
   let isDelete = false
@@ -41,16 +40,16 @@ function index() {
       return
     }
 
-    if (speakAll == true) {
+    if (speakAll === true) {
       speak(text)
       return
     }
 
     if (text.slice(-1) === ' ') {
-      let lastWord = text.split(' ').slice(-2)
+      const lastWord = text.split(' ').slice(-2)
       speak(lastWord)
     } else {
-      let lastChar = text.slice(-1)
+      const lastChar = text.slice(-1)
       speak(lastChar)
     }
   }
@@ -62,7 +61,7 @@ function index() {
     if (e.keyCode === 8) {
       isDelete = true
     }
-    speakThis(text)
+    speakThis(textToRead)
   }
 
   const changeHandler = (e) => {
@@ -72,20 +71,20 @@ function index() {
 
   const addLetter = (letter) => {
     if (accent !== '') {
-      let txt = text
+      const txt = text
 
-      if (accent == '˜') {
+      if (accent === '˜') {
         if (letter === 'a') {
           setText(txt.slice(0, -1) + 'ã')
           setAccent('')
         }
-        if (letter == 'o') {
+        if (letter === 'o') {
           setText(txt.slice(0, -1) + 'õ')
           setAccent('')
         }
       }
 
-      if (accent == '´') {
+      if (accent === '´') {
         if (letter === 'a') {
           setText(txt.slice(0, -1) + 'á')
           setAccent('')
@@ -98,28 +97,27 @@ function index() {
           setText(txt.slice(0, -1) + 'í')
           setAccent('')
         }
-        if (letter == 'o') {
+        if (letter === 'o') {
           setText(txt.slice(0, -1) + 'ó')
           setAccent('')
         }
-        if (letter == 'u') {
+        if (letter === 'u') {
           setText(txt.slice(0, -1) + 'ú')
           setAccent('')
         }
       }
     } else {
-      let txt = text
+      const txt = text
 
-      if (letter == 'apagar') {
+      if (letter === 'apagar') {
         setText('')
-      } else if (letter == '˜') {
+      } else if (letter === '˜') {
         setText(txt + '˜')
         setAccent('˜')
-      } else if (letter == '´') {
+      } else if (letter === '´') {
         setText(txt + '´')
         setAccent('´')
       } else {
-
         setText(txt + letter)
       }
     }

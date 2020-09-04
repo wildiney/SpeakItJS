@@ -1,9 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Button from '../Button/Button'
 
 import classes from './Keyboard.module.css'
 
-function Keyboard({ addLetter, speakHandler }) {
+function Keyboard ({ addLetter, speakHandler }) {
   const letters = [
     'a',
     'b',
@@ -40,10 +42,7 @@ function Keyboard({ addLetter, speakHandler }) {
     '/',
     ' ',
     'apagar',
-    'enter',
-  ]
-
-  const specialLetters = [
+    'enter'
   ]
 
   return (
@@ -69,6 +68,11 @@ function Keyboard({ addLetter, speakHandler }) {
       </div>
     </div>
   )
+}
+
+Keyboard.propTypes = {
+  addLetter: PropTypes.func,
+  speakHandler: PropTypes.func
 }
 
 export default Keyboard
