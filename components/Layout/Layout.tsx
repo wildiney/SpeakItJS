@@ -3,9 +3,11 @@ import React from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
+import classes from './Layout.module.css'
+
 function Layout({ children }) {
     return (
-        <div className="container">
+        <div className={classes.container}>
             <Header></Header>
             <main>
                 {children}

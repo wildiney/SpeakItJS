@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Button({ children, clickHandler }) {
+import classes from './Button.module.css'
+
+function Button({ children, clickHandler, newclass }) {
+    const addClass = [classes.btn, newclass].join(' ')
     return (
-        <button className="form__btn" id="btn_speak" onClick={() => { clickHandler(true) }}>{children}</button>
+        <button className={addClass} onClick={() => { clickHandler(true) }}>{children}</button>
     )
 }
 
