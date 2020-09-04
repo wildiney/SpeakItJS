@@ -29,7 +29,7 @@ function index () {
     }
   }
 
-  const speakThis = (speakAll = false) => {
+  const speakThis = (content:string, speakAll:boolean = false):void => {
     if (text === '') {
       return
     }
@@ -42,25 +42,21 @@ function index () {
 
     if (speakAll === true) {
       speak(text)
-      return
-    }
-
-    if (text.slice(-1) === ' ') {
-      const lastWord = text.split(' ').slice(-2)
-      speak(lastWord)
     } else {
-      const lastChar = text.slice(-1)
-      speak(lastChar)
+      if (text.slice(-1) === ' ') {
+        const lastWord = text.split(' ').slice(-2)
+        speak(lastWord)
+      } else {
+        const lastChar = text.slice(-1)
+        speak(lastChar)
+      }
     }
   }
 
   const keyupHandler = (e) => {
-    const textToRead = text
-
     if (e.keyCode === 8) {
       isDelete = true
     }
-    speakThis(textToRead)
   }
 
   const changeHandler = (e) => {
@@ -139,7 +135,6 @@ function index () {
           textHandler={text}
         ></TextArea>
         <Keyboard addLetter={addLetter} speakHandler={speakThis} ></Keyboard>
-        {/* <Button clic  kHandler={speakThis}>Leia!</Button> */}
       </Layout>
     </>
   )
