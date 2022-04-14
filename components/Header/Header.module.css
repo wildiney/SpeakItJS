@@ -1,0 +1,10 @@
+.header {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  height: 100%;
+  display: flex;
+  background-color: #025e73;
+  margin: 0;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}

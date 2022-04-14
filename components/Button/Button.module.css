@@ -1,0 +1,24 @@
+.btn__fullsize{
+    width: 100%;
+    padding-left:auto;
+    padding-right: auto ;
+}
+
+.btn {
+    grid-row: 2/3;
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 100%;
+    background-color: #e18453;
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    border: 2px solid #037f8c;
+    text-transform: uppercase;
+    align-self: baseline;
+    cursor: pointer;
+  }
+  .btn:focus {
+    outline: none;
+  }
+  
