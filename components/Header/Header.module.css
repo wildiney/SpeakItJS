@@ -1,5 +1,6 @@
 .header {
   height: 5rem;
+
   display: flex;
   background-color: #025e73;
   margin: 0;
@@ -12,3 +13,4 @@
   text-align: center;
   width: 100%;
 }
+
