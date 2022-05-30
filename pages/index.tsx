@@ -8,7 +8,7 @@ import Keyboard from '../components/Keyboard/Keyboard'
 function index () {
   const language = 'pt-BR'
   const [text, setText] = useState('')
-  const [accent, setAccent] = useState('')
+  // const [accent, setAccent] = useState('')
   let isDelete: boolean = false
 
   const speak = (text) => {
@@ -29,7 +29,7 @@ function index () {
     }
   }
 
-  const speakThis = (content:string, speakAll:boolean = false):void => {
+  const speakThis = (content: string, speakAll: boolean = false): void => {
     if (text === '') {
       return
     }
@@ -64,63 +64,63 @@ function index () {
     setText(text)
   }
 
-  const addLetter = (letter) => {
-    if (accent !== '') {
-      const txt = text
+  // const addLetter = (letter) => {
+  //   if (accent !== '') {
+  //     const txt = text
 
-      if (accent === '˜') {
-        if (letter === 'a') {
-          setText(txt.slice(0, -1) + 'ã')
-          setAccent('')
-        }
-        if (letter === 'o') {
-          setText(txt.slice(0, -1) + 'õ')
-          setAccent('')
-        }
-      }
+  //     if (accent === '˜') {
+  //       if (letter === 'a') {
+  //         setText(txt.slice(0, -1) + 'ã')
+  //         setAccent('')
+  //       }
+  //       if (letter === 'o') {
+  //         setText(txt.slice(0, -1) + 'õ')
+  //         setAccent('')
+  //       }
+  //     }
 
-      if (accent === '´') {
-        if (letter === 'a') {
-          setText(txt.slice(0, -1) + 'á')
-          setAccent('')
-        }
-        if (letter === 'e') {
-          setText(txt.slice(0, -1) + 'é')
-          setAccent('')
-        }
-        if (letter === 'i') {
-          setText(txt.slice(0, -1) + 'í')
-          setAccent('')
-        }
-        if (letter === 'o') {
-          setText(txt.slice(0, -1) + 'ó')
-          setAccent('')
-        }
-        if (letter === 'u') {
-          setText(txt.slice(0, -1) + 'ú')
-          setAccent('')
-        }
-      }
-    } else {
-      const txt = text
+  //     if (accent === '´') {
+  //       if (letter === 'a') {
+  //         setText(txt.slice(0, -1) + 'á')
+  //         setAccent('')
+  //       }
+  //       if (letter === 'e') {
+  //         setText(txt.slice(0, -1) + 'é')
+  //         setAccent('')
+  //       }
+  //       if (letter === 'i') {
+  //         setText(txt.slice(0, -1) + 'í')
+  //         setAccent('')
+  //       }
+  //       if (letter === 'o') {
+  //         setText(txt.slice(0, -1) + 'ó')
+  //         setAccent('')
+  //       }
+  //       if (letter === 'u') {
+  //         setText(txt.slice(0, -1) + 'ú')
+  //         setAccent('')
+  //       }
+  //     }
+  //   } else {
+  //     const txt = text
 
-      if (letter === 'apagar') {
-        setText('')
-      } else if (letter === '˜') {
-        setText(txt + '˜')
-        setAccent('˜')
-      } else if (letter === '´') {
-        setText(txt + '´')
-        setAccent('´')
-      } else {
-        setText(txt + letter)
-      }
-    }
-  }
+  //     if (letter === 'apagar') {
+  //       setText('')
+  //     } else if (letter === '˜') {
+  //       setText(txt + '˜')
+  //       setAccent('˜')
+  //     } else if (letter === '´') {
+  //       setText(txt + '´')
+  //       setAccent('´')
+  //     } else {
+  //       setText(txt + letter)
+  //     }
+  //   }
+  // }
 
   useEffect(() => {
     init()
-    speakThis(text)
+    // speakThis(text)
   })
 
   return (
@@ -134,7 +134,9 @@ function index () {
           changeHandler={changeHandler}
           textHandler={text}
         ></TextArea>
-        <Keyboard addLetter={addLetter} speakHandler={speakThis} ></Keyboard>
+        <Keyboard
+          // addLetter={addLetter}
+          speakHandler={speakThis} ></Keyboard>
       </Layout>
     </>
   )
