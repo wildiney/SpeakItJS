@@ -1,5 +1,4 @@
 .header {
-  height: 5rem;
 
   display: flex;
   background-color: #025e73;
@@ -12,5 +11,6 @@
   color: white;
   text-align: center;
   width: 100%;
+  font-size: 2rem;
 }
 
