@@ -18,3 +18,8 @@ npm start
 ## Demo
 
 Demo is available in [https://wil-speakit.netlify.app/](https://wil-speakit.netlify.app/)
+
+## CHANGELOG
+
+V.2.0.0 - Change Keyboard
+There were no more need to have an exclusive alphabetical keyboard so in this new version I removed to gain space.
